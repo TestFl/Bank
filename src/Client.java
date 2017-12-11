@@ -3,32 +3,36 @@ import java.util.ArrayList;
 public class Client {
     private String firstName;
     private String lastName;
-    private int phoneNumber;
-    private int bankPersonalNumber;
+    int idNumber;
     private ArrayList<Double> transactions;
 
 
 
-    public Client(String firstName, String lastName, int phoneNumber, long bankPersonalNumber) {
+    public Client(String firstName, String lastName,int idNumber, double initialAmount) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.bankPersonalNumber = bankPersonalNumber;
+        this.idNumber = idNumber;
+        this.transactions = new ArrayList<Double>();
+        addTransaction(initialAmount);
     }
 
     public void addTransaction(double amount){
         this.transactions.add(amount);
     }
-     public int crateAccounNumber(){
-        int newAccountNumber = 10000 +(int) Math.random()* 90000;
-        if (getAccountNumber() == newAccountNumber){
-            int newAccountNumber = 10000 +(int) Math.random()* 90000;
-        }
-        return newAccountNumber;
-     }
 
-     private int getAccountNumber(){
-         return 0;
-     }
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getIdNumber() {
+        return idNumber;
+    }
+
+    public ArrayList<Double> getTransactions() {
+        return transactions;
+    }
 }
